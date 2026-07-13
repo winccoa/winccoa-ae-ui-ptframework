@@ -2,8 +2,8 @@ V 14
 6
 LANG:10001 0 
 LANG:10000 0 
-LANG:10010 0 
 LANG:10009 0 
+LANG:10010 0 
 LANG:10007 0 
 LANG:10004 0 
 PANEL,-1 -1 362 51 N "color-1" 5
@@ -200,9 +200,15 @@ dyn_int GetMyChildren(int currentParentIndex, bool bRecursive = FALSE)
 
 
 " 0
- 5
+ 6
 "CBRef" "1"
 "EClose" E
+"ELangChanged" "main()
+{
+  DebugN(\"USS\", userButton._frameSelector, self.name());
+  userButton.DisplayCurrentText();
+}
+"
 "LangSwitchMode" "1"
 "dpi" "96"
 "pdpi" "108.888"
@@ -231,8 +237,8 @@ E E "main(bool enter)
 6
 LANG:10001 0 
 LANG:10000 0 
-LANG:10010 0 
 LANG:10009 0 
+LANG:10010 0 
 LANG:10007 0 
 LANG:10004 0 
 
@@ -353,7 +359,7 @@ int GetParentID(int myID)
   }
 }
 " 0
- 0 1 3 2 1 E U  0 E 551 -10 569 30
+ 0 1 3 2 1 E U  0 E 547 -7 573 28
 0 2 2 "0s" 0 0 0 201 0 0  560 10 1
 1
 LANG:10001 48 Noto Sans,-1,30,5,700,0,0,0,0,0,0,0,0,0,0,1,Bold

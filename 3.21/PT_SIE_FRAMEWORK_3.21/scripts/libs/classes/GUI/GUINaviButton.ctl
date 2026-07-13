@@ -32,7 +32,7 @@ class GUINaviButton
   private const string colorPrimary = "color-primary"; //!< The primary color for the button when it is active.
   private const string colorText = "color-soft-text"; //!< The default text color for the button.
   private const string colorTextHover = "color-std-text"; //!< The text color when the button is hovered over.
-
+   private langString lsCurrentText;
   /**
    * @brief Default constructor for GUINaviButton class.
    * @param textRef The reference to the shape representing the button's text.
@@ -93,7 +93,17 @@ class GUINaviButton
     if (shapeExists("textRef"))
       _textRef.SetText(text);
 
+    lsCurrentText = text;
+
   }
+
+   public void DisplayCurrentText()
+  {
+    if (shapeExists("textRef"))
+      _textRef.SetText(lsCurrentText);
+    DebugN("display function:", lsCurrentText, (string) lsCurrentText, self.name());
+  }
+
 
   /**
    * @brief Sets the visibility of the button text.

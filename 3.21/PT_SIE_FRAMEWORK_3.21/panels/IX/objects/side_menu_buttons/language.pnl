@@ -2,14 +2,14 @@ V 14
 6
 LANG:10001 0 
 LANG:10000 0 
-LANG:10010 0 
 LANG:10009 0 
+LANG:10010 0 
 LANG:10007 0 
 LANG:10004 0 
 PANEL,-1 -1 354 50 N "color-1" 0
 "main()
 {
-  languageButton.SetText(getCatStr(\"SIE\", \"buttonNavi_language\"));
+  setButtonText();
 }
 " 0
  E E E E 1 -1 -1 0  0 0
@@ -18,13 +18,32 @@ E "#uses \"classes/GUI/GUINaviButton\"
 #uses \"classes/GUI/GUINaviLanguageButton\"
 shared_ptr<GUINaviButton> languageButton = new GUINaviLanguageButton(getShape(\"textRef\"), getShape(\"iconRef\"), getShape(\"frameSelector\"));
 
-public shared_ptr<GUINaviButton> GetGUINaviButton(){
+public shared_ptr<GUINaviButton> GetGUINaviButton()
+{
   return languageButton;
 }
+
+setButtonText()
+{
+
+  dyn_string dsText;
+
+  for (int i = 0; i < getNoOfLangs(); i++)
+  {
+    dsText[i+1] = getCatStr(\"SIE\", \"buttonNavi_language\", i);
+  }
+
+  languageButton.SetText(dsText);
+}
 " 0
- 4
+ 5
 "CBRef" "1"
 "EClose" E
+"ELangChanged" "main()
+{
+  languageButton.DisplayCurrentText();
+}
+"
 "dpi" "96"
 "pdpi" "108.888"
 2 1 0 0 0 0 1 0
@@ -42,7 +61,8 @@ LAYER, 0
 1 10 15 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
  E E
 4 0 0 0 0 0
-E E "main(bool enter) {
+E E "main(bool enter)
+{
   languageButton.SetHoverColor(enter);
 }
 " 0
@@ -51,8 +71,8 @@ E E "main(bool enter) {
 6
 LANG:10001 0 
 LANG:10000 0 
-LANG:10010 0 
 LANG:10009 0 
+LANG:10010 0 
 LANG:10007 0 
 LANG:10004 0 
 
@@ -61,7 +81,8 @@ LANG:10004 0
 "layoutAlignment" "AlignNone"
 "dashclr"N "_Transparent"
 "antiAliased" "0"
-E "main(mapping event) {
+E "main(mapping event)
+{
   languageButton.Clicked();
 }
 " 0

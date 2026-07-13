@@ -144,7 +144,13 @@ class GUINaviUserButton : GUINaviButton
       userInitials = "~";
 
     iconRef.SetUserText(userInitials);
-    textRef.SetText(getCatStr("SIE", "buttonNavi_user") + ": " + getUserName());
+    dyn_string dsTexts;
+
+    for (int i = 0; i < getNoOfLangs() ; i++)
+    {
+      dsTexts[i+1] = (getCatStr("SIE", "buttonNavi_user" , i) + ": " + getUserName());
+    }
+    SetText(dsTexts);
   }
 
   /**

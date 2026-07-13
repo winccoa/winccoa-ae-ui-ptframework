@@ -4,9 +4,10 @@ LANG:10001 0
 PANEL,-1 -1 224 164 N "color-2" 0
 E E E E E 1 -1 -1 0  100 70
 ""0  1
-E E 5
+E E 6
 "CBRef" "1"
 "EClose" E
+"LangSwitchMode" "1"
 "dpi" "96"
 "pdpi" "94.1104"
 "sizePolicy" "Preferred MinimumExpanding"

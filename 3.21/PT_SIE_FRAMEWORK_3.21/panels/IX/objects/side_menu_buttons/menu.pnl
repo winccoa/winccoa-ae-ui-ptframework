@@ -2,16 +2,16 @@ V 14
 6
 LANG:10001 0 
 LANG:10000 0 
-LANG:10010 0 
 LANG:10009 0 
+LANG:10010 0 
 LANG:10007 0 
 LANG:10004 0 
 PANEL,-1 -1 225 50 N "color-1" 0
 "main()
 {
-   // firstTime=true;
+  // firstTime=true;
   menuButton.SetPointer(menuButton);
-  menuButton.SetText(getCatStr(\"SIE\", \"buttonNavi_menu\"));
+  setButtonText();
 
 }
 " 0
@@ -21,21 +21,31 @@ E "#uses \"classes/GUI/GUINaviButton\"
 #uses \"classes/GUI/GUINaviMenuButton\"
 shared_ptr<GUINaviButton> menuButton = new GUINaviMenuButton(getShape(\"textRef\"), getShape(\"iconRef\"), getShape(\"frameSelector\"));
 
-public shared_ptr<GUINaviButton> GetGUINaviButton(){
-
-  if(shapeExists(\"textRef\") && shapeExists(\"iconRef\") && shapeExists(\"frameSelector\"))
+public shared_ptr<GUINaviButton> GetGUINaviButton()
 {
 
+  if (shapeExists(\"textRef\") && shapeExists(\"iconRef\") && shapeExists(\"frameSelector\"))
+  {
     return menuButton;
-
+  }
+  else
+  {
+    return null; // Safe handling
+  }
 }
-else
+
+
+setButtonText()
 {
 
-    return null; // Safe handling
+  dyn_string dsText;
 
-}
+  for (int i = 0; i < getNoOfLangs(); i++)
+  {
+    dsText[i + 1] = getCatStr(\"SIE\", \"buttonNavi_menu\", i);
+  }
 
+  menuButton.SetText(dsText);
 }
 
 
@@ -46,10 +56,10 @@ else
 //  void HandleTheSubNabi(int currentStatus)
 //  {
 //    string mainModule = myModuleName();
-  // string screenNum = mainModule.at(mainModule.length() - 1);
+// string screenNum = mainModule.at(mainModule.length() - 1);
 //
 //
-   //string reQuiredModule =  \"naviModule_\" + screenNum;
+//string reQuiredModule =  \"naviModule_\" + screenNum;
 //    string panel = rootPanel(mainModule);
 //    dyn_string allButtons;
 //    allButtons = getShapes(mainModule, panel, \"\", true);
@@ -89,10 +99,16 @@ else
 //      }
 //    }
 //
-//  }" 0
- 4
+//  }
+" 0
+ 5
 "CBRef" "1"
 "EClose" E
+"ELangChanged" "main()
+{
+  menuButton.DisplayCurrentText();
+}
+"
 "dpi" "96"
 "pdpi" "108.888"
 2 1 0 0 0 0 1 0
@@ -110,7 +126,8 @@ LAYER, 0
 1 10 15 E E E 1 E 1 E N "_Transparent" E N "_Transparent" E E
  E E
 4 0 0 0 0 0
-E E "main(bool enter) {
+E E "main(bool enter)
+{
   menuButton.SetHoverColor(enter);
 }
 " 0
@@ -119,8 +136,8 @@ E E "main(bool enter) {
 6
 LANG:10001 0 
 LANG:10000 0 
-LANG:10010 0 
 LANG:10009 0 
+LANG:10010 0 
 LANG:10007 0 
 LANG:10004 0 
 
@@ -129,27 +146,28 @@ LANG:10004 0
 "dashclr"N "_Transparent"
 "antiAliased" "0"
 E "//int clicked = 0;
-main(mapping event) {
+main(mapping event)
+{
   menuButton.Clicked();
-/*firstTime=false;
+  /*firstTime=false;
 
-DebugTN(\"clicked\",clicked);
+  DebugTN(\"clicked\",clicked);
 
-if(clicked ==0)
-{
-clicked =1;
-currentState=clicked;
-HandleTheSubNabi(clicked);
-}
-else if(clicked ==1)
-{
-clicked =0;
-currentState=clicked;
-HandleTheSubNabi(clicked);
-}
+  if(clicked ==0)
+  {
+  clicked =1;
+  currentState=clicked;
+  HandleTheSubNabi(clicked);
+  }
+  else if(clicked ==1)
+  {
+  clicked =0;
+  currentState=clicked;
+  HandleTheSubNabi(clicked);
+  }
 
-//
-*/
+  //
+  */
 }
 
 
