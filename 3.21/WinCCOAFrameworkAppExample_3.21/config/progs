@@ -12,5 +12,6 @@ WCCILsim         | always |      30 |        3 |        1 |
 WCCOActrl        | always |      30 |        3 |        1 |webclient_http.ctl -num 2
 WCCOActrl        | always |      30 |        3 |        1 |dashboard.ctl
 node             | always |      30 |        3 |        1 |system-dashboard/index.js
-WCCOAui          | manual |      30 |        3 |        1 |-m gedi
-WCCOAui          | always |      30 |       10 |        2 |-p vision/login.pnl -dbg UI_INFO
+WCCOAui          |   once |      30 |        3 |        1 |-m gedi
+WCCOAui          |   once |      30 |       10 |        2 |-p vision/login.pnl -dbg UI_INFO
+WCCOAui          | always |      30 |        2 |        2 |-p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root:

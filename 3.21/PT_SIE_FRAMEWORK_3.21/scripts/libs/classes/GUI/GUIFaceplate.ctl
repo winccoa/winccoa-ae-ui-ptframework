@@ -28,26 +28,101 @@ class GUIFaceplate
     * @param module The module name to check. Defaults to the current module name.
     * @return The screen number as an integer.
   */
-  public static int GetMyScreenNum(const string module = myModuleName())
+public static int GetMyScreenNum(
+  const string module = myModuleName()
+)
+{
+  string tempModule = module;
+
+  /*
+   * GEDI Quick Test has no numeric module suffix.
+   */
+  if (module == "_QuickTest_")
   {
-    string tempModule = module;
-    if (!patternMatch("WinCC_OA_*", module))
-    {
-      shape rootPanelShape = getShape(module + "." + rootPanel(module) + ":");
-      shape modShape = rootPanelShape.parentShape();
-      shape modPanel = modShape.panel();
-      tempModule = modPanel.moduleName();
-
-      if (!patternMatch("mainModule_*", tempModule) && !patternMatch("WinCC_OA_*", tempModule))
-      {
-        return GetMyScreenNum(tempModule);
-      }
-    }
-
-    dyn_string dsSplit = strsplit(tempModule, "_");
-    return dsSplit.last();
+    return 1;
   }
 
+  /*
+   * These embedded modules already contain the logical
+   * screen number in their names.
+   *
+   * Examples:
+   * mainModule_1
+   * naviModule_1
+   * faceplateModule_2
+   */
+  if (
+    patternMatch("mainModule_*", module) ||
+    patternMatch("naviModule_*", module) ||
+    patternMatch("headerModule_*", module) ||
+    patternMatch("infoModule_*", module) ||
+    patternMatch("faceplateModule_*", module) ||
+    patternMatch("detailModule_*", module)
+  )
+  {
+    dyn_string dsModuleParts =
+      strsplit(module, "_");
+
+    int iScreenNumber =
+      (int)dsModuleParts.last();
+
+    if (iScreenNumber < 1)
+    {
+      return 1;
+    }
+
+    return iScreenNumber;
+  }
+
+  /*
+   * Original behavior for WinCC_OA modules
+   * and nested panels.
+   */
+  if (!patternMatch("WinCC_OA_*", module))
+  {
+    shape rootPanelShape =
+      getShape(
+        module + "." +
+        rootPanel(module) +
+        ":"
+      );
+
+    shape modShape =
+      rootPanelShape.parentShape();
+
+    shape modPanel =
+      modShape.panel();
+
+    tempModule =
+      modPanel.moduleName();
+
+    if (
+      !patternMatch("mainModule_*", tempModule) &&
+      !patternMatch("WinCC_OA_*", tempModule)
+    )
+    {
+      return GetMyScreenNum(
+        tempModule
+      );
+    }
+  }
+
+  dyn_string dsSplit =
+    strsplit(
+      tempModule,
+      "_"
+    );
+
+  int iScreenNumber =
+    (int)dsSplit.last();
+
+  if (iScreenNumber < 1)
+  {
+    return 1;
+  }
+
+  return iScreenNumber;
+}
   /**
    * @brief Adds a function pointer to the list of faceplates to be opened.
    * @param faceplateToOpen The function pointer for the faceplate.

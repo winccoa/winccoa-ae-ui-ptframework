@@ -3,8 +3,8 @@ pvss_path = "C:/Program Files/Siemens/WinCC_OA/3.21"
 proj_path = "C:/Program Files/Siemens/WinCC_OA/3.21/Stdlib_3.21"
 proj_path = "C:/Program Files/Siemens/WinCC_OA/3.21/Examples_3.21"
 
-proj_path = "C:/Users/Z0058BSR/Desktop/PT_SIE_FRAMEWORK_3.21"
-proj_path = "C:/Users/Z0058BSR/Desktop/WinCCOAFrameworkAppExample_3.21"
+proj_path = "D:/WinCC_OA_Proj/3_21_Projects/PTFramework/3.21/PT_SIE_FRAMEWORK_3.21"
+proj_path = "D:/WinCC_OA_Proj/3_21_Projects/PTFramework/3.21/WinCCOAFrameworkAppExample_3.21"
 proj_version = "3.21"
 useNGA = 1
 useSQLite = 1

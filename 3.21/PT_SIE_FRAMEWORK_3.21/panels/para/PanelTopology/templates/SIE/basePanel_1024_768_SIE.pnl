@@ -29,34 +29,231 @@
  <events>
   <script isEscaped="1" name="ScopeLib"><![CDATA[#uses &quot;classes/GUI/GUIBasePanel&quot;
 #uses &quot;classes/GUI/GUIFaceplate&quot;
-#event faceplateToOpen(string sFaceplate, bool bOpen=TRUE)
-#event detailToOpen(string sPanel, dyn_string dsParams, bool bOpen=TRUE)
+
+#event faceplateToOpen(
+  string sFaceplate,
+  bool bOpen = TRUE
+)
+
+#event detailToOpen(
+  string sPanel,
+  dyn_string dsParams,
+  bool bOpen = TRUE
+)
 
 dyn_string dsPanels;
 
-shared_ptr&lt;GUIBasePanel&gt; basePanel = new GUIBasePanel(getShape(&quot;naviModule&quot;), getShape(&quot;mainModule&quot;), getShape(&quot;headerModule&quot;), getShape(&quot;infoModule&quot;), getShape(&quot;faceplateModule&quot;), $Screen);
-]]></script>
+
+/*
+ * Runtime context used by the base panel.
+ */
+bool g_bQuickTest = FALSE;
+string g_sScreen = &quot;1&quot;;
+int g_iNumber = 1;
+int g_iNode = 0;
+bool g_bQuickTestInitialized = FALSE;
+
+/**
+ * Reads the normal Panel Topology dollar parameters.
+ *
+ * When they are missing, the panel is running directly
+ * inside GEDI Quick Test and logical fallback values are used.
+ */
+void InitializePanelContext()
+{
+  bool bHasTopologyParameters =
+    isDollarDefined(&quot;$Screen&quot;) &amp;&amp;
+    isDollarDefined(&quot;$Number&quot;);
+
+  g_bQuickTest =
+    !bHasTopologyParameters;
+
+  /*
+   * Quick Test fallback values.
+   *
+   * These are logical PTMS values only.
+   * They do not move the _QuickTest_ window to monitor 1.
+   */
+  if (g_bQuickTest)
+  {
+    g_sScreen = &quot;1&quot;;
+    g_iNumber = 1;
+    g_iNode = 0;
+
+    return;
+  }
+
+  /*
+   * Normal startup after the login panel.
+   */
+  g_sScreen = (string)$Screen;
+  g_iNumber = (int)$Number;
+  g_iNode = 0;
+
+  if (isDollarDefined(&quot;$Node&quot;))
+  {
+    string sNode =
+      (string)$Node;
+
+    if (sNode != &quot;&quot;)
+    {
+      g_iNode =
+        (int)sNode;
+    }
+  }
+}
+
+
+/**
+ * Returns TRUE during the normal Panel Topology startup.
+ */
+bool IsPanelTopologyInstance()
+{
+  return !g_bQuickTest;
+}
+
+
+/**
+ * Creates the GUIBasePanel in both modes.
+ *
+ * Normal startup:
+ *   g_sScreen contains the original $Screen.
+ *
+ * Quick Test:
+ *   g_sScreen contains the logical fallback &quot;1&quot;.
+ */
+shared_ptr&lt;GUIBasePanel&gt; CreateBasePanel()
+{
+  InitializePanelContext();
+
+  return new GUIBasePanel(
+    getShape(&quot;naviModule&quot;),
+    getShape(&quot;mainModule&quot;),
+    getShape(&quot;headerModule&quot;),
+    getShape(&quot;infoModule&quot;),
+    getShape(&quot;faceplateModule&quot;),
+    g_sScreen
+  );
+}
+
+
+/*
+ * Keep the original creation timing.
+ * The object is created from ScopeLib before Initialize scripts.
+ */
+shared_ptr&lt;GUIBasePanel&gt; basePanel =
+  CreateBasePanel();]]></script>
   <script isEscaped="1" name="Initialize"><![CDATA[main()
 {
   moduleMaximize(myModuleName());
-  pt_checkPanelTopologyCache();
-  string strTitle;
-  int iItem = 0;
 
-  if (!isDollarDefined(&quot;$Screen&quot;) || !isDollarDefined(&quot;$Number&quot;))
+  pt_checkPanelTopologyCache();
+
+  /*
+   * Normal startup after Login.
+   *
+   * Keep the original behavior unchanged.
+   */
+  if (!g_bQuickTest)
   {
-    pt_openBasePanel(&quot;3_3&quot;);
+    ptms_LoadInitPanel(
+      (int)$Number,
+      (string)$Screen,
+      g_iNode
+    );
+
+    basePanel.Initialize();
+
+    return;
   }
-  else
+
+  /*
+   * GEDI may execute the panel initialization more than once.
+   * Do not initialize the Quick Test context twice.
+   */
+  if (g_bQuickTestInitialized)
   {
-    // Set the appropriate module names
-    ptms_LoadInitPanel($Number, $Screen, isDollarDefined(&quot;$Node&quot;) ? $Node : 0);
+    return;
   }
+
+  g_bQuickTestInitialized = TRUE;
+
+  DebugN(
+    &quot;BasePanel&quot;,
+    &quot;Running directly inside _QuickTest_.&quot;,
+    &quot;Module:&quot;,
+    myModuleName(),
+    &quot;Logical screen:&quot;,
+    g_sScreen,
+    &quot;Logical number:&quot;,
+    g_iNumber
+  );
+
+  /*
+   * Quick Test does not execute the normal Login /
+   * screen-configuration workflow.
+   *
+   * Prepare the minimum data required by
+   * ptms_LoadInitPanel().
+   */
+  while (dynlen(strptms_Templates) &lt; g_iNumber)
+  {
+    dynAppend(
+      strptms_Templates,
+      &quot;&quot;
+    );
+  }
+
+  while (dynlen(strptms_PanelsToLoad) &lt; g_iNumber)
+  {
+    dynAppend(
+      strptms_PanelsToLoad,
+      &quot;&quot;
+    );
+  }
+
+  /*
+   * Use the SIE template in Quick Test.
+   */
+  strptms_Templates[g_iNumber] =
+    &quot;SIE&quot;;
+
+  /*
+   * Load the default local Panel Topology node.
+   *
+   * ptms_LoadInitPanel() interprets DEFAULTPT as:
+   * node = 1
+   * system = local system
+   */
+  strptms_PanelsToLoad[g_iNumber] =
+    &quot;DEFAULTPT&quot;;
+
+  /*
+   * Resolution used to select:
+   *
+   * SIE/naviPanel_1024_768_SIE.pnl
+   * SIE/infoPanel_1024_768_SIE.pnl
+   */
+  tptms_DisplayWidth[g_sScreen] =
+    1024;
+
+  tptms_DisplayHeight[g_sScreen] =
+    768;
+
+  /*
+   * Load the navigation, main and info panels into the
+   * embedded modules of the current _QuickTest_ panel.
+   *
+   * No new WinCC_OA_x module is opened.
+   */
+  ptms_LoadInitPanel(
+    g_iNumber,
+    g_sScreen,
+    g_iNode
+  );
 
   basePanel.Initialize();
-
-}
-]]></script>
+}]]></script>
  </events>
  <shapes>
   <shape Name="mainModule" layerId="0" shapeType="EMBEDDED_MODULE">
@@ -197,25 +394,43 @@ shared_ptr&lt;GUIBasePanel&gt; basePanel = new GUIBasePanel(getShape(&quot;naviM
    <events>
     <script isEscaped="1" name="Initialize"><![CDATA[main()
 {
-  string moduleDp = basePanel.GetInfoPanelName();
+  if (!IsPanelTopologyInstance())
+  {
+    return;
+  }
+
+  string moduleDp =
+    basePanel.GetInfoPanelName();
 
   if (!dpExists(moduleDp))
   {
-    dpCreate(moduleDp, &quot;ExampleDP_Bit&quot;);
-    delay(1);
+    dpCreate(
+      moduleDp,
+      &quot;ExampleDP_Bit&quot;
+    );
 
+    delay(1);
   }
 
-  dpSet(moduleDp + &quot;.&quot;, TRUE);
+  dpSet(
+    moduleDp + &quot;.&quot;,
+    TRUE
+  );
 
-  dpConnect(&quot;work&quot;, moduleDp + &quot;.&quot;);
+  dpConnect(
+    &quot;work&quot;,
+    moduleDp + &quot;.&quot;
+  );
 }
 
-work(string dp, bool vis)
+
+work(
+  string dp,
+  bool vis
+)
 {
   this.visible = vis;
-}
-]]></script>
+}]]></script>
    </events>
   </shape>
   <shape Name="SPACER1" layerId="0" shapeType="SPACER">
@@ -353,24 +568,55 @@ dyn_string dsFaceplates;
 
 main()
 {
-//   pt_checkPanelTopologyCache();
-  GUIFaceplate::AddFunctionPtr(self.faceplateToOpen, self.detailToOpen);
+  GUIFaceplate::AddFunctionPtr(
+    self.faceplateToOpen,
+    self.detailToOpen,
+    g_iNumber
+  );
 
+  RootPanelOnModule(
+    &quot;/IX/faceplates/faceplateSideModuleBasePanel&quot;,
+    &quot;menu&quot;,
+    faceplateModule.ModuleName(),
+    makeDynString(
+      &quot;$moduleName:&quot; + myModuleName(),
+      &quot;$modName:&quot; + faceplateModule.ModuleName(),
+      &quot;$beamed:&quot; + false
+    )
+  );
 
-  RootPanelOnModule(&quot;/IX/faceplates/faceplateSideModuleBasePanel&quot;, &quot;menu&quot;, faceplateModule.ModuleName(), makeDynString(&quot;$moduleName:&quot; + myModuleName(), &quot;$modName:&quot; + faceplateModule.ModuleName(), &quot;$beamed:&quot; + false));
-
-  uiConnect(&quot;visibleCB&quot;, self.faceplateToOpen);
+  uiConnect(
+    &quot;visibleCB&quot;,
+    self.faceplateToOpen
+  );
 }
+
 
 visibleCB(string sFaceplate, bool bOpen)
 {
-  if (sFaceplate != &quot;&quot; &amp;&amp; strpos(sFaceplate, &quot;§&quot;) &gt; 0)
-    sFaceplate = substr(sFaceplate, 0, strpos(sFaceplate, &quot;§&quot;));
-
-  int iPos = dynContains(dsFaceplates, sFaceplate);
-
-  if (sFaceplate == &quot;&quot; &amp;&amp; !bOpen) //clear all
+  if (
+    sFaceplate != &quot;&quot; &amp;&amp;
+    strpos(sFaceplate, &quot;§&quot;) &gt; 0
+  )
   {
+    sFaceplate = substr(
+      sFaceplate,
+      0,
+      strpos(sFaceplate, &quot;§&quot;)
+    );
+  }
+
+  int iPos = dynContains(
+    dsFaceplates,
+    sFaceplate
+  );
+
+  if (
+    sFaceplate == &quot;&quot; &amp;&amp;
+    !bOpen
+  )
+  {
+    // Clear all faceplates
     dynClear(dsFaceplates);
     this.visible(false);
   }
@@ -378,22 +624,30 @@ visibleCB(string sFaceplate, bool bOpen)
   {
     if (iPos &lt; 1)
     {
-      dynAppend(dsFaceplates, sFaceplate);
+      dynAppend(
+        dsFaceplates,
+        sFaceplate
+      );
+
       this.visible(true);
     }
   }
-  else //close
+  else
   {
+    // Close faceplate
     if (iPos &gt; 0)
     {
-      dynRemove(dsFaceplates, iPos);
-      this.visible(dynlen(dsFaceplates) &gt; 0);
+      dynRemove(
+        dsFaceplates,
+        iPos
+      );
+
+      this.visible(
+        dynlen(dsFaceplates) &gt; 0
+      );
     }
   }
-
-// DebugN(&quot;faceplate visible?&quot;,dsFaceplates, sFaceplate, bOpen);
-}
-]]></script>
+}]]></script>
    </events>
   </shape>
   <shape Name="detailModule" layerId="0" shapeType="EMBEDDED_MODULE">

@@ -20,16 +20,16 @@ E E 5
 DISPLAY_LAYER, 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0
 LAYER, 0 
 0
-1 62 1 "" 18
+1 78 1 "" 18
 14 "foreCol" 0 0 N "color-std-text"
 0
-1 63 1 "" 19
+1 79 1 "" 19
 14 "foreCol" 0 0 N "color-std-text"
 0
-1 64 1 "" 24
+1 80 1 "" 24
 14 "foreCol" 0 0 N "color-std-text"
 0
-1 76 1 "" 1
+1 92 1 "" 1
 1 "scrolledCB" 1 1 "synchronized main()
 {
 //   int lineCount = this.lineCount();
@@ -110,7 +110,7 @@ LANG:10004 0
 
   this.text((langString)dsText);
 }" 0
- E 0 1 3 2 1 E U  0 E 74 31 146 45
+ E 0 1 3 2 1 E U  0 E 73 31 147 45
 0 2 2 "0s" 0 0 0 201 0 0  110 38 1
 6
 LANG:10001 51 Siemens Sans,-1,13,5,700,0,0,0,0,0,0,0,0,0,0,1,Bold

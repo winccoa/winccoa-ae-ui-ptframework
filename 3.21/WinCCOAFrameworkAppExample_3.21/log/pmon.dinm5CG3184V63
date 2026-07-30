@@ -1458,3 +1458,160 @@ WCCILpmon    (1), 2026.03.31 12:20:28.962, SYS,  INFO,       13/pmon, Completely
 WCCILpmon    (1), 2026.03.31 13:52:41.845, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
 WCCILpmon    (1), 2026.03.31 13:52:41.847, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
 WCCILpmon    (1), 2026.03.31 13:52:41.850, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2026.07.29 09:51:57.155, SYS,  INFO,        1, Manager Start, WAIT_MODE
+WCCILpmon    (1), 2026.07.29 09:52:02.111, SYS,  INFO,       20/pmon, Got START_ALL command from 127.0.0.1, starting the project
+WCCILpmon    (1), 2026.07.29 09:52:02.252, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILdataSQLite.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 1 
+WCCILpmon    (1), 2026.07.29 09:52:03.029, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAnextgenarch.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 2 
+WCCILpmon    (1), 2026.07.29 09:52:03.947, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILevent.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 3 
+WCCILpmon    (1), 2026.07.29 09:52:04.988, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILproxy.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 4 
+WCCILpmon    (1), 2026.07.29 09:52:05.407, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOActrl.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 5 -num 1 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.07.29 09:52:05.909, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILsim.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 6 
+WCCILpmon    (1), 2026.07.29 09:52:06.466, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOActrl.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 7 webclient_http.ctl -num 2
+WCCILpmon    (1), 2026.07.29 09:52:06.808, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOActrl.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 8 dashboard.ctl
+WCCILpmon    (1), 2026.07.29 09:52:07.167, SYS,  INFO,        1, Manager Start, "node.exe" "C:\Program Files\Siemens\WinCC_OA\3.21\javascript/winccoa-manager/lib/bootstrap.js" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 9 system-dashboard/index.js
+WCCILpmon    (1), 2026.07.29 09:52:08.278, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 11 -p vision/login.pnl -dbg UI_INFO
+WCCILpmon    (1), 2026.07.29 09:52:09.620, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.07.29 09:52:32.537, SYS,  INFO,       21/pmon, Got STOP_ALL command from 127.0.0.1, stopping the project
+WCCILpmon    (1), 2026.07.29 09:52:32.540, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 09:52:32.542, SYS,  INFO,       17/pmon, Stopping Manager node(4) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 09:52:32.543, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(3) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 09:52:32.545, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(2) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 09:52:32.546, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 09:52:32.548, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 09:52:32.549, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 09:52:33.636, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 09:52:33.852, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 09:52:35.863, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 09:52:36.577, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2026.07.29 09:52:40.006, SYS,  INFO,       20/pmon, Got START_ALL command from 127.0.0.1, starting the project
+WCCILpmon    (1), 2026.07.29 09:52:40.025, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILdataSQLite.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 1 
+WCCILpmon    (1), 2026.07.29 09:52:40.499, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAnextgenarch.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 2 
+WCCILpmon    (1), 2026.07.29 09:52:40.953, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILevent.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 3 
+WCCILpmon    (1), 2026.07.29 09:52:41.612, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILproxy.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 4 
+WCCILpmon    (1), 2026.07.29 09:52:41.954, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOActrl.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 5 -num 1 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.07.29 09:52:42.239, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILsim.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 6 
+WCCILpmon    (1), 2026.07.29 09:52:42.796, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOActrl.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 7 webclient_http.ctl -num 2
+WCCILpmon    (1), 2026.07.29 09:52:43.142, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOActrl.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 8 dashboard.ctl
+WCCILpmon    (1), 2026.07.29 09:52:43.481, SYS,  INFO,        1, Manager Start, "node.exe" "C:\Program Files\Siemens\WinCC_OA\3.21\javascript/winccoa-manager/lib/bootstrap.js" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 9 system-dashboard/index.js
+WCCILpmon    (1), 2026.07.29 09:52:44.042, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 11 -p vision/login.pnl -dbg UI_INFO
+WCCILpmon    (1), 2026.07.29 09:52:45.260, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.07.29 09:53:12.901, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(1) at index 10
+WCCILpmon    (1), 2026.07.29 09:53:12.958, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 10 -m gedi
+WCCILpmon    (1), 2026.07.29 09:54:13.589, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAnextgenarch(1) at index 2
+WCCILpmon    (1), 2026.07.29 09:54:13.591, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 09:54:17.454, SYS,  INFO,       11/pmon, Detected stopped manager WCCOAnextgenarch(1) - restarting it #1
+WCCILpmon    (1), 2026.07.29 09:54:17.503, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAnextgenarch.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 2 
+WCCILpmon    (1), 2026.07.29 10:06:54.034, SYS,  INFO,       11/pmon, Detected stopped manager WCCOAui(1) - restarting it #1
+WCCILpmon    (1), 2026.07.29 10:06:54.118, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 11 -p vision/login.pnl -dbg UI_INFO
+WCCILpmon    (1), 2026.07.29 10:08:50.550, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(2) at index 10
+WCCILpmon    (1), 2026.07.29 10:08:50.610, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 10 -m gedi
+WCCILpmon    (1), 2026.07.29 10:36:43.586, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(1) at index 11
+WCCILpmon    (1), 2026.07.29 10:36:43.588, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 10:36:43.808, SYS,  INFO,       11/pmon, Detected stopped manager WCCOAui(1) - restarting it #1
+WCCILpmon    (1), 2026.07.29 10:36:43.924, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 11 -p vision/login.pnl -dbg UI_INFO
+WCCILpmon    (1), 2026.07.29 10:37:10.229, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(1) at index 11
+WCCILpmon    (1), 2026.07.29 10:37:10.231, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 10:37:10.662, SYS,  INFO,       11/pmon, Detected stopped manager WCCOAui(1) - restarting it #2
+WCCILpmon    (1), 2026.07.29 10:37:10.767, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 11 -p vision/login.pnl -dbg UI_INFO
+WCCILpmon    (1), 2026.07.29 11:02:28.050, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(1) at index 11
+WCCILpmon    (1), 2026.07.29 11:02:31.396, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(2) at index 10
+WCCILpmon    (1), 2026.07.29 11:02:37.881, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(2) at index 10
+WCCILpmon    (1), 2026.07.29 11:02:40.345, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(2) at index 10
+WCCILpmon    (1), 2026.07.29 11:02:42.907, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(2) at index 10
+WCCILpmon    (1), 2026.07.29 11:32:07.289, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(2) at index 10
+WCCILpmon    (1), 2026.07.29 11:32:07.290, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(2) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 11:32:09.549, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(1) at index 11
+WCCILpmon    (1), 2026.07.29 11:32:17.302, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(1) at index 11
+WCCILpmon    (1), 2026.07.29 11:32:19.108, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(1) at index 11
+WCCILpmon    (1), 2026.07.29 11:32:19.110, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 11:32:22.642, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(2) at index 10
+WCCILpmon    (1), 2026.07.29 11:32:22.643, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(2) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 12:40:06.093, SYS,  INFO,       21/pmon, Got STOP_ALL command from 127.0.0.1, stopping the project
+WCCILpmon    (1), 2026.07.29 12:40:06.100, SYS,  INFO,       17/pmon, Stopping Manager node(4) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 12:40:06.102, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(3) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 12:40:06.103, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(2) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 12:40:06.105, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 12:40:06.106, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 12:40:06.110, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 12:40:07.155, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 12:40:07.481, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 12:40:09.512, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 12:40:09.621, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2026.07.29 14:07:45.447, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2026.07.29 14:07:45.448, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2026.07.29 14:07:45.452, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2026.07.29 14:22:24.788, SYS,  INFO,        1, Manager Start, WAIT_MODE
+WCCILpmon    (1), 2026.07.29 14:22:34.844, SYS,  INFO,       20/pmon, Got START_ALL command from 127.0.0.1, starting the project
+WCCILpmon    (1), 2026.07.29 14:22:34.924, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILdataSQLite.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 1 
+WCCILpmon    (1), 2026.07.29 14:22:35.482, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAnextgenarch.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 2 
+WCCILpmon    (1), 2026.07.29 14:22:36.230, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILevent.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 3 
+WCCILpmon    (1), 2026.07.29 14:22:38.127, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILproxy.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 4 
+WCCILpmon    (1), 2026.07.29 14:22:38.521, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOActrl.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 5 -num 1 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.07.29 14:22:38.910, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILsim.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 6 
+WCCILpmon    (1), 2026.07.29 14:22:39.445, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOActrl.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 7 webclient_http.ctl -num 2
+WCCILpmon    (1), 2026.07.29 14:22:39.790, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOActrl.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 8 dashboard.ctl
+WCCILpmon    (1), 2026.07.29 14:22:40.132, SYS,  INFO,        1, Manager Start, "node.exe" "C:\Program Files\Siemens\WinCC_OA\3.21\javascript/winccoa-manager/lib/bootstrap.js" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 9 system-dashboard/index.js
+WCCILpmon    (1), 2026.07.29 14:22:40.821, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 10 -m gedi
+WCCILpmon    (1), 2026.07.29 14:22:45.010, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 11 -p vision/login.pnl -dbg UI_INFO
+WCCILpmon    (1), 2026.07.29 14:22:46.517, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.07.29 14:55:30.874, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(2) at index 11
+WCCILpmon    (1), 2026.07.29 14:55:30.875, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(2) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 14:55:34.100, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(2) at index 11
+WCCILpmon    (1), 2026.07.29 14:55:34.162, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 11 -p vision/login.pnl -dbg UI_INFO
+WCCILpmon    (1), 2026.07.29 14:56:03.455, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(2) at index 11
+WCCILpmon    (1), 2026.07.29 14:56:03.457, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(2) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 14:59:53.100, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(2) at index 11
+WCCILpmon    (1), 2026.07.29 14:59:53.182, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 11 -p vision/login.pnl -dbg UI_INFO
+WCCILpmon    (1), 2026.07.29 14:59:57.612, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(1) at index 10
+WCCILpmon    (1), 2026.07.29 14:59:57.677, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 10 -m gedi
+WCCILpmon    (1), 2026.07.29 15:00:00.993, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(2) at index 11
+WCCILpmon    (1), 2026.07.29 15:00:00.995, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(2) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 15:44:47.382, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(1) at index 10
+WCCILpmon    (1), 2026.07.29 15:44:47.383, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 15:44:52.933, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(1) at index 10
+WCCILpmon    (1), 2026.07.29 15:44:53.007, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 10 -m gedi
+WCCILpmon    (1), 2026.07.29 15:46:38.136, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(2) at index 11
+WCCILpmon    (1), 2026.07.29 15:46:38.220, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 11 -p vision/login.pnl -dbg UI_INFO
+WCCILpmon    (1), 2026.07.29 15:56:35.464, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(2) at index 11
+WCCILpmon    (1), 2026.07.29 15:56:35.526, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 11 -p vision/login.pnl -dbg UI_INFO
+WCCILpmon    (1), 2026.07.29 15:57:13.283, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(2) at index 11
+WCCILpmon    (1), 2026.07.29 15:57:13.285, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(2) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 16:00:13.095, SYS,  INFO,       21/pmon, Got STOP_ALL command from 127.0.0.1, stopping the project
+WCCILpmon    (1), 2026.07.29 16:00:13.099, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 16:00:13.101, SYS,  INFO,       17/pmon, Stopping Manager node(4) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 16:00:13.103, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(3) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 16:00:13.105, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(2) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 16:00:13.107, SYS,  INFO,       17/pmon, Stopping Manager WCCILsim(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 16:00:13.110, SYS,  INFO,       17/pmon, Stopping Manager WCCOActrl(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 16:00:13.112, SYS,  INFO,       17/pmon, Stopping Manager WCCOAnextgenarch(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 16:00:16.149, SYS,  INFO,       17/pmon, Stopping Manager WCCILevent(0) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 16:00:16.477, SYS,  INFO,       17/pmon, Stopping Manager WCCILdataSQLite(0) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 16:00:18.379, SYS,  INFO,       17/pmon, Stopping Manager WCCILproxy(1) with signal SIGTERM
+WCCILpmon    (1), 2026.07.29 16:00:19.302, SYS,  INFO,       13/pmon, Completely stopped the project - waiting for commands
+WCCILpmon    (1), 2026.07.29 16:04:44.308, SYS,  INFO,        3/pmon, Got shutdown command - stopping the project and terminating
+WCCILpmon    (1), 2026.07.29 16:04:44.310, SYS,  INFO,       15/pmon, Completely stopped the project - terminating
+WCCILpmon    (1), 2026.07.29 16:04:44.313, SYS,  INFO,        2, Manager Stop
+WCCILpmon    (1), 2026.07.30 10:10:47.891, SYS,  INFO,        1, Manager Start, WAIT_MODE
+WCCILpmon    (1), 2026.07.30 10:16:24.550, SYS,  INFO,       20/pmon, Got START_ALL command from 127.0.0.1, starting the project
+WCCILpmon    (1), 2026.07.30 10:16:24.646, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILdataSQLite.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 1 
+WCCILpmon    (1), 2026.07.30 10:16:25.301, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAnextgenarch.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 2 
+WCCILpmon    (1), 2026.07.30 10:16:26.043, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILevent.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 3 
+WCCILpmon    (1), 2026.07.30 10:16:28.068, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILproxy.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 4 
+WCCILpmon    (1), 2026.07.30 10:16:28.571, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOActrl.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 5 -num 1 -f pvss_scripts.lst
+WCCILpmon    (1), 2026.07.30 10:16:28.975, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCILsim.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 6 
+WCCILpmon    (1), 2026.07.30 10:16:29.441, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOActrl.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 7 webclient_http.ctl -num 2
+WCCILpmon    (1), 2026.07.30 10:16:29.814, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOActrl.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 8 dashboard.ctl
+WCCILpmon    (1), 2026.07.30 10:16:30.165, SYS,  INFO,        1, Manager Start, "node.exe" "C:\Program Files\Siemens\WinCC_OA\3.21\javascript/winccoa-manager/lib/bootstrap.js" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 9 system-dashboard/index.js
+WCCILpmon    (1), 2026.07.30 10:16:31.235, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 10 -m gedi
+WCCILpmon    (1), 2026.07.30 10:16:37.109, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 11 -p vision/login.pnl -dbg UI_INFO
+WCCILpmon    (1), 2026.07.30 10:16:38.176, SYS,  INFO,        9/pmon, The project is up and running. Entering monitor mode
+WCCILpmon    (1), 2026.07.30 10:46:26.250, SYS,  INFO,       28/pmon, Got INS command from 127.0.0.1, inserting new manager WCCOAui at index 12
+WCCILpmon    (1), 2026.07.30 10:46:28.203, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2026.07.30 10:46:33.199, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2026.07.30 10:46:33.267, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 12 -p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl"
+WCCILpmon    (1), 2026.07.30 10:46:58.622, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 10:47:00.757, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 10:47:00.758, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(3) with signal SIGTERM
+WCCILpmon    (1), 2026.07.30 10:47:03.717, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(1) at index 12
+WCCILpmon    (1), 2026.07.30 10:47:03.720, SYS,  INFO,       11/pmon, Detected stopped manager WCCOAui(1) - restarting it #1
+WCCILpmon    (1), 2026.07.30 10:47:03.793, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 12 -p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root:

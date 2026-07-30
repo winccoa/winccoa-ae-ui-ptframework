@@ -1,1 +1,1 @@
-C:/Program Files/Siemens/WinCC_OA/3.21/bin/pgsql/bin/postgres.exe "-D" "C:/Users/Z0058BSR/Desktop/WinCCOAFrameworkAppExample_3.21_Ahmed/db/wincc_oa/localdb/postgresql/17/pgdata" "-k C:\Users\Z0058BSR\AppData\Local\.winccoa"
+C:/Program Files/Siemens/WinCC_OA/3.21/bin/pgsql/bin/postgres.exe "-D" "D:/WinCC_OA_Proj/3_21_Projects/PTFramework/3.21/WinCCOAFrameworkAppExample_3.21/db/wincc_oa/localdb/postgresql/17/pgdata" "-k C:\Users\z004u6jf\AppData\Local\.winccoa"
