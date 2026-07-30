@@ -299,7 +299,7 @@ main()
      <prop name="zh_CN.utf8"></prop>
     </prop>
     <prop name="TransparentForMouse">True</prop>
-    <prop name="maximumSize">-1 30</prop>
+    <prop name="maximumSize">-1 190</prop>
     <prop name="sizePolicy">
      <sizePolicy horizontal="Ignored" vertical="Expanding"/>
     </prop>

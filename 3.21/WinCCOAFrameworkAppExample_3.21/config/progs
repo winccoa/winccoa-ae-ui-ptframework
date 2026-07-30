@@ -14,4 +14,4 @@ WCCOActrl        | always |      30 |        3 |        1 |dashboard.ctl
 node             | always |      30 |        3 |        1 |system-dashboard/index.js
 WCCOAui          |   once |      30 |        3 |        1 |-m gedi
 WCCOAui          |   once |      30 |       10 |        2 |-p vision/login.pnl -dbg UI_INFO
-WCCOAui          | always |      30 |        2 |        2 |-p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root:
+WCCOAui          | manual |      30 |        2 |        2 |-p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root:

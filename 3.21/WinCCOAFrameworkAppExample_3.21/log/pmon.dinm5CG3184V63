@@ -1615,3 +1615,49 @@ WCCILpmon    (1), 2026.07.30 10:47:00.758, SYS,  INFO,       17/pmon, Stopping M
 WCCILpmon    (1), 2026.07.30 10:47:03.717, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(1) at index 12
 WCCILpmon    (1), 2026.07.30 10:47:03.720, SYS,  INFO,       11/pmon, Detected stopped manager WCCOAui(1) - restarting it #1
 WCCILpmon    (1), 2026.07.30 10:47:03.793, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 12 -p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root:
+WCCILpmon    (1), 2026.07.30 11:01:49.261, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:01:49.265, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(3) with signal SIGTERM
+WCCILpmon    (1), 2026.07.30 11:01:49.705, SYS,  INFO,       11/pmon, Detected stopped manager WCCOAui(3) - restarting it #1
+WCCILpmon    (1), 2026.07.30 11:01:49.814, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 12 -p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root:
+WCCILpmon    (1), 2026.07.30 11:25:50.369, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:25:53.074, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:25:53.076, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(3) with signal SIGTERM
+WCCILpmon    (1), 2026.07.30 11:25:53.289, SYS,  INFO,       11/pmon, Detected stopped manager WCCOAui(3) - restarting it #1
+WCCILpmon    (1), 2026.07.30 11:25:53.360, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 12 -p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root: -dbg USER_INFO
+WCCILpmon    (1), 2026.07.30 11:25:57.326, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:37:06.379, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:37:06.443, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 12 -p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root: -dbg USER_INFO
+WCCILpmon    (1), 2026.07.30 11:40:10.725, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:40:10.792, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 12 -p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root: -dbg USER_INFO
+WCCILpmon    (1), 2026.07.30 11:40:55.935, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:40:57.848, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:40:57.849, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(3) with signal SIGTERM
+WCCILpmon    (1), 2026.07.30 11:41:00.774, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:41:00.837, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 12 -p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root: -dbg USER_INFO -titleBar
+WCCILpmon    (1), 2026.07.30 11:41:12.116, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:41:28.982, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:41:29.054, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 12 -p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root: -dbg USER_INFO
+WCCILpmon    (1), 2026.07.30 11:42:15.696, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:42:18.688, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:42:18.690, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(3) with signal SIGTERM
+WCCILpmon    (1), 2026.07.30 11:42:23.496, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:42:23.556, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 12 -p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root:
+WCCILpmon    (1), 2026.07.30 11:46:11.570, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:46:11.633, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 12 -p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root:
+WCCILpmon    (1), 2026.07.30 11:46:33.067, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:46:33.129, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 12 -p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root:
+WCCILpmon    (1), 2026.07.30 11:47:57.269, SYS,  INFO,       28/pmon, Got INS command from 127.0.0.1, inserting new manager WCCOAui at index 13
+WCCILpmon    (1), 2026.07.30 11:47:58.533, SYS,  INFO,       29/pmon, Got PROP_PUT command from 127.0.0.1, changing manager WCCOAui(1) at index 13
+WCCILpmon    (1), 2026.07.30 11:48:00.637, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(1) at index 13
+WCCILpmon    (1), 2026.07.30 11:48:00.710, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 13 -p "para/PanelTopology/templates/TEMPLATE1/basePanel_1280_1024_TEMPLATE1.pnl"
+WCCILpmon    (1), 2026.07.30 11:49:11.814, SYS,  INFO,       27/pmon, Got DEL command from 127.0.0.1, deleting the manager WCCOAui at index 13
+WCCILpmon    (1), 2026.07.30 11:49:14.085, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:49:14.148, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 12 -p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root:
+WCCILpmon    (1), 2026.07.30 11:49:53.792, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:49:53.794, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(3) with signal SIGTERM
+WCCILpmon    (1), 2026.07.30 11:49:58.268, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(3) at index 12
+WCCILpmon    (1), 2026.07.30 11:49:58.330, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 12 -p "para/PanelTopology/templates/SIE/basePanel_1024_768_SIE.pnl" -user root:
+WCCILpmon    (1), 2026.07.30 11:51:14.813, SYS,  INFO,       25/pmon, Got STOP command (SIGTERM) from 127.0.0.1, stopping the manager WCCOAui(2) at index 11
+WCCILpmon    (1), 2026.07.30 11:51:14.814, SYS,  INFO,       17/pmon, Stopping Manager WCCOAui(2) with signal SIGTERM
+WCCILpmon    (1), 2026.07.30 11:51:18.877, SYS,  INFO,       24/pmon, Got START command from 127.0.0.1, starting the manager WCCOAui(2) at index 11
+WCCILpmon    (1), 2026.07.30 11:51:18.936, SYS,  INFO,        1, Manager Start, "C:\Program Files\Siemens\WinCC_OA\3.21\bin\WCCOAui.exe" -PROJ "WinCCOAFrameworkAppExample_3.21" -pmonIndex 11 -p vision/login.pnl -dbg UI_INFO

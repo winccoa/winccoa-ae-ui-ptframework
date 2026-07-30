@@ -111,8 +111,11 @@ class GUIBasePanel
     _actualPanel = _mainPanelName;
     //If title bar is not needed, change this:
     bool bQuickTest = myModuleName() == "_QuickTest_";
+    string moduleName= myModuleName();
 
-titleBar(bQuickTest);
+bool visionRunFromConsole=moduleName.contains("Vision_");
+titleBar(bQuickTest || visionRunFromConsole);
+
   }
 
   /**
